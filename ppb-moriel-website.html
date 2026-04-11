@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPB - Partido Progreso y Bienestar | MORIEL 2026</title>
+    <meta name="description" content="Partido Progreso y Bienestar presenta a Ana Sofía Moriel como candidata presidencial 2026. Liberales en economía, libertarios en derechos.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: #2c2c2a;
+            background: #F5F5F5;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(4, 49, 104, 0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        nav .logo-circle {
+            width: 45px;
+            height: 45px;
+            background: #043168;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            font-weight: 700;
+            color: #fce07d;
+        }
+
+        nav .logo-text {
+            font-size: 16px;
+            font-weight: 700;
+            color: #043168;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #043168;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #b03f6e;
+        }
+
+        /* Hero Section - Dual PPB + MORIEL */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #043168 0%, #0a4a8f 50%, #043168 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            overflow: hidden;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -25%;
+            width: 150%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(252, 224, 125, 0.15) 0%, transparent 70%);
+            filter: blur(100px);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            right: -30%;
+            width: 140%;
+            height: 180%;
+            background: radial-gradient(circle, rgba(176, 63, 110, 0.12) 0%, transparent 60%);
+            filter: blur(90px);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+        }
+
+        .hero-ppb-badge {
+            display: inline-block;
+            background: rgba(252, 224, 125, 0.15);
+            border: 2px solid rgba(252, 224, 125, 0.4);
+            border-radius: 50px;
+            padding: 0.5rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-ppb-badge span {
+            color: #fce07d;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: 120px;
+            font-weight: 700;
+            color: #fce07d;
+            letter-spacing: -3px;
+            margin: 0 0 1rem;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .hero-subtitle {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .hero-candidate {
+            font-size: 20px;
+            color: rgba(252, 224, 125, 0.9);
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+        }
+
+        .hero-slogan {
+            font-size: 36px;
+            color: white;
+            font-style: italic;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #fce07d;
+            color: #043168;
+        }
+
+        .btn-primary:hover {
+            background: #f5d95f;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #043168;
+            margin-bottom: 3rem;
+            text-align: center;
+            letter-spacing: -1px;
+        }
+
+        /* Filosofía */
+        .filosofia {
+            background: white;
+        }
+
+        .filosofia-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .filosofia-card {
+            padding: 2.5rem;
+            border-radius: 12px;
+            border-left: 5px solid;
+        }
+
+        .filosofia-card.progreso {
+            background: linear-gradient(135deg, rgba(4, 49, 104, 0.05) 0%, rgba(4, 49, 104, 0.01) 100%);
+            border-color: #043168;
+        }
+
+        .filosofia-card.bienestar {
+            background: linear-gradient(135deg, rgba(176, 63, 110, 0.08) 0%, rgba(176, 63, 110, 0.01) 100%);
+            border-color: #b03f6e;
+        }
+
+        .filosofia-card h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .filosofia-card.progreso h3 {
+            color: #043168;
+        }
+
+        .filosofia-card.bienestar h3 {
+            color: #b03f6e;
+        }
+
+        .filosofia-card p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #2c2c2a;
+        }
+
+        .filosofia-quote {
+            background: #fce07d;
+            padding: 2.5rem;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .filosofia-quote::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(176, 63, 110, 0.15) 0%, transparent 70%);
+            filter: blur(60px);
+            pointer-events: none;
+        }
+
+        .filosofia-quote p {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #043168;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Organigrama */
+        .organigrama {
+            background: #F5F5F5;
+        }
+
+        .org-chart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .org-level {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .org-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(4, 49, 104, 0.1);
+            min-width: 280px;
+        }
+
+        .org-card.presidencial {
+            background: linear-gradient(135deg, #043168 0%, #0a4a8f 100%);
+            box-shadow: 0 8px 30px rgba(4, 49, 104, 0.3);
+        }
+
+        .org-card.presidencial .org-cargo {
+            color: #fce07d;
+        }
+
+        .org-card.presidencial .org-nombre {
+            color: white;
+        }
+
+        .org-card.coordinadora {
+            border: 3px solid #b03f6e;
+        }
+
+        .org-card.secretarias {
+            background: #fce07d;
+        }
+
+        .org-cargo {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #043168;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .org-nombre {
+            font-size: 18px;
+            font-weight: 700;
+            color: #043168;
+        }
+
+        /* Compás político */
+        .compas-section {
+            background: white;
+        }
+
+        .compas-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .compas-visual {
+            text-align: center;
+        }
+
+        .compas-explanation {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .compas-card {
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid;
+        }
+
+        .compas-card.economico {
+            background: rgba(4, 49, 104, 0.05);
+            border-color: #043168;
+        }
+
+        .compas-card.social {
+            background: rgba(176, 63, 110, 0.08);
+            border-color: #b03f6e;
+        }
+
+        .compas-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .compas-card.economico h4 {
+            color: #043168;
+        }
+
+        .compas-card.social h4 {
+            color: #b03f6e;
+        }
+
+        .compas-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #2c2c2a;
+        }
+
+        /* Plataforma */
+        .plataforma {
+            background: #F5F5F5;
+        }
+
+        .plataforma-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .plataforma-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            border-left: 4px solid;
+            transition: transform 0.3s;
+        }
+
+        .plataforma-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .plataforma-card.economia {
+            border-color: #fce07d;
+            background: linear-gradient(135deg, rgba(252, 224, 125, 0.1) 0%, white 100%);
+        }
+
+        .plataforma-card.social {
+            border-color: #b03f6e;
+            background: linear-gradient(135deg, rgba(176, 63, 110, 0.08) 0%, white 100%);
+        }
+
+        .plataforma-card.educacion {
+            border-color: #043168;
+            background: linear-gradient(135deg, rgba(4, 49, 104, 0.05) 0%, white 100%);
+        }
+
+        .plataforma-card.seguridad {
+            border-color: #fce07d;
+            background: linear-gradient(135deg, rgba(252, 224, 125, 0.1) 0%, white 100%);
+        }
+
+        .plataforma-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 1.5rem;
+        }
+
+        .plataforma-card.economia .plataforma-icon {
+            background: #fce07d;
+        }
+
+        .plataforma-card.social .plataforma-icon {
+            background: #b03f6e;
+        }
+
+        .plataforma-card.educacion .plataforma-icon {
+            background: #043168;
+        }
+
+        .plataforma-card.seguridad .plataforma-icon {
+            background: #fce07d;
+        }
+
+        .plataforma-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #043168;
+            margin-bottom: 1rem;
+        }
+
+        .plataforma-card p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #2c2c2a;
+        }
+
+        /* Campaña MORIEL */
+        .moriel-campaign {
+            background: linear-gradient(135deg, #fce07d 0%, #f5d95f 100%);
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moriel-campaign::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -20%;
+            width: 120%;
+            height: 160%;
+            background: radial-gradient(circle, rgba(4, 49, 104, 0.12) 0%, transparent 60%);
+            filter: blur(100px);
+            pointer-events: none;
+        }
+
+        .moriel-campaign::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            left: -25%;
+            width: 140%;
+            height: 180%;
+            background: radial-gradient(circle, rgba(176, 63, 110, 0.1) 0%, transparent 55%);
+            filter: blur(90px);
+            pointer-events: none;
+        }
+
+        .moriel-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .moriel-logo {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .moriel-logo h2 {
+            font-size: 96px;
+            font-weight: 700;
+            color: #043168;
+            letter-spacing: -2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .moriel-logo .underline {
+            width: 400px;
+            height: 6px;
+            background: #b03f6e;
+            border-radius: 3px;
+            margin: 0 auto 1rem;
+        }
+
+        .moriel-logo p {
+            font-size: 24px;
+            color: #043168;
+            font-weight: 500;
+            letter-spacing: 3px;
+        }
+
+        .moriel-discurso {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 8px 30px rgba(4, 49, 104, 0.15);
+            margin-bottom: 3rem;
+        }
+
+        .moriel-discurso h3 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #043168;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .moriel-discurso p {
+            font-size: 20px;
+            line-height: 2;
+            color: #2c2c2a;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .moriel-discurso strong {
+            color: #b03f6e;
+            font-weight: 700;
+        }
+
+        .moriel-discurso .conclusion {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 2rem;
+        }
+
+        .moriel-cta {
+            text-align: center;
+        }
+
+        .moriel-cta h3 {
+            font-size: 64px;
+            font-weight: 700;
+            color: #043168;
+            margin-bottom: 1rem;
+        }
+
+        .moriel-cta p {
+            font-size: 28px;
+            color: #b03f6e;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #043168;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .footer-logo-circle.azul {
+            background: #043168;
+        }
+
+        .footer-logo-circle.amarillo {
+            background: #fce07d;
+        }
+
+        .footer-logo-circle.rosa {
+            background: #b03f6e;
+        }
+
+        footer h3 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        footer p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+
+        .footer-info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-info p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 64px;
+            }
+
+            .hero-subtitle {
+                font-size: 24px;
+            }
+
+            .hero-slogan {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 36px;
+            }
+
+            .filosofia-grid,
+            .compas-container {
+                grid-template-columns: 1fr;
+            }
+
+            .moriel-logo h2 {
+                font-size: 56px;
+            }
+
+            .moriel-cta h3 {
+                font-size: 42px;
+            }
+
+            .org-level {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#inicio" class="logo">
+                <div class="logo-circle">P</div>
+                <span class="logo-text">PPB</span>
+            </a>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                <li><a href="#plataforma">Plataforma</a></li>
+                <li><a href="#moriel">MORIEL</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="hero-ppb-badge">
+                <span>PARTIDO PROGRESO Y BIENESTAR</span>
+            </div>
+            <h1>MORIEL</h1>
+            <p class="hero-subtitle">Ana Sofía Moriel para Presidenta de México</p>
+            <p class="hero-candidate">Candidata Presidencial 2026</p>
+            <p class="hero-slogan">Primero nuestra gente, primero tú</p>
+            <div class="hero-cta">
+                <a href="#moriel" class="btn btn-primary">Conoce a MORIEL</a>
+                <a href="#plataforma" class="btn btn-secondary">Nuestra Plataforma</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filosofía -->
+    <section class="filosofia" id="quienes-somos">
+        <div class="container">
+            <h2>Nuestra Filosofía</h2>
+            <div class="filosofia-grid">
+                <div class="filosofia-card progreso">
+                    <h3>Progreso</h3>
+                    <p>El desarrollo económico y social no son opuestos. Creemos en la innovación, el emprendimiento y el libre mercado como motores del crecimiento que beneficia a todas y todos.</p>
+                </div>
+                <div class="filosofia-card bienestar">
+                    <h3>Bienestar</h3>
+                    <p>El bienestar individual es el fin último de toda política pública. Defendemos el derecho de cada persona a construir su propia vida, libre de imposiciones del Estado o de terceros.</p>
+                </div>
+            </div>
+            <div class="filosofia-quote">
+                <p>"El PPB nace de la convicción de que México necesita una nueva generación de liderazgo político: liberal en lo económico, libertario en lo social, y comprometido con el desarrollo humano integral."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organigrama -->
+    <section class="organigrama">
+        <div class="container">
+            <h2>Estructura del Partido</h2>
+            <div class="org-chart">
+                <!-- Nivel 1: Candidata Presidencial -->
+                <div class="org-level">
+                    <div class="org-card presidencial">
+                        <p class="org-cargo">Candidata Presidencial</p>
+                        <p class="org-nombre">Ana Sofía Moriel</p>
+                    </div>
+                </div>
+
+                <!-- Nivel 2: Coordinadora General -->
+                <div class="org-level">
+                    <div class="org-card coordinadora">
+                        <p class="org-cargo">Coordinadora General de Campaña</p>
+                        <p class="org-nombre">Sara Alvidrez</p>
+                    </div>
+                </div>
+
+                <!-- Nivel 3: Secretarías -->
+                <div class="org-level">
+                    <div class="org-card secretarias">
+                        <p class="org-cargo">Secretaria de Comunicación Estratégica</p>
+                        <p class="org-nombre">Alexa Quintero</p>
+                    </div>
+                    <div class="org-card secretarias">
+                        <p class="org-cargo">Directora de Políticas Públicas</p>
+                        <p class="org-nombre">Sofía Torres</p>
+                    </div>
+                    <div class="org-card secretarias">
+                        <p class="org-cargo">Secretaria de Finanzas y Logística</p>
+                        <p class="org-nombre">Jessica Talavera</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compás Político -->
+    <section class="compas-section">
+        <div class="container">
+            <h2>Posicionamiento Político</h2>
+            <div class="compas-container">
+                <div class="compas-visual">
+                    <svg viewBox="0 0 400 400" style="width: 100%; max-width: 500px; height: auto;">
+                        <!-- Ejes -->
+                        <line x1="200" y1="0" x2="200" y2="400" stroke="#d3d1c7" stroke-width="2"/>
+                        <line x1="0" y1="200" x2="400" y2="200" stroke="#d3d1c7" stroke-width="2"/>
+                        
+                        <!-- Cuadrantes fondo -->
+                        <rect x="200" y="0" width="200" height="200" fill="rgba(4, 49, 104, 0.05)"/>
+                        <rect x="0" y="0" width="200" height="200" fill="rgba(176, 63, 110, 0.05)"/>
+                        <rect x="0" y="200" width="200" height="200" fill="rgba(252, 224, 125, 0.15)"/>
+                        <rect x="200" y="200" width="200" height="200" fill="rgba(4, 49, 104, 0.08)"/>
+                        
+                        <!-- Labels de ejes -->
+                        <text x="200" y="20" text-anchor="middle" fill="#043168" font-size="12" font-weight="500">Libertario</text>
+                        <text x="200" y="395" text-anchor="middle" fill="#043168" font-size="12" font-weight="500">Autoritario</text>
+                        <text x="10" y="205" fill="#043168" font-size="12" font-weight="500">Izquierda</text>
+                        <text x="340" y="205" fill="#043168" font-size="12" font-weight="500">Derecha</text>
+                        
+                        <!-- Posición MORIEL -->
+                        <circle cx="280" cy="100" r="50" fill="rgba(176, 63, 110, 0.2)" stroke="#b03f6e" stroke-width="3"/>
+                        <circle cx="280" cy="100" r="12" fill="#b03f6e"/>
+                        
+                        <!-- Label MORIEL -->
+                        <text x="280" y="170" text-anchor="middle" fill="#043168" font-size="16" font-weight="500">MORIEL</text>
+                    </svg>
+                </div>
+                <div class="compas-explanation">
+                    <div class="compas-card economico">
+                        <h4>Eje económico</h4>
+                        <p>Centro-derecha. Mercado libre con red de seguridad social. Apoyo al emprendimiento y reducción burocrática.</p>
+                    </div>
+                    <div class="compas-card social">
+                        <h4>Eje social</h4>
+                        <p>Libertario. Derechos individuales amplios, matrimonio igualitario, despenalización, derechos reproductivos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plataforma -->
+    <section class="plataforma" id="plataforma">
+        <div class="container">
+            <h2>Ejes de Plataforma</h2>
+            <div class="plataforma-grid">
+                <div class="plataforma-card economia">
+                    <div class="plataforma-icon">💼</div>
+                    <h3>Economía</h3>
+                    <p>Libre mercado, reducción burocrática, apoyo al emprendimiento. Creemos en la prosperidad a través de la competencia y la innovación.</p>
+                </div>
+                <div class="plataforma-card social">
+                    <div class="plataforma-icon">🏳️‍🌈</div>
+                    <h3>Derechos Sociales</h3>
+                    <p>Matrimonio igualitario, despenalización, derechos reproductivos. Tu vida, tus decisiones, tus derechos.</p>
+                </div>
+                <div class="plataforma-card educacion">
+                    <div class="plataforma-icon">📚</div>
+                    <h3>Educación</h3>
+                    <p>Inversión pública, becas por mérito, educación sexual integral. El conocimiento es el motor del cambio.</p>
+                </div>
+                <div class="plataforma-card seguridad">
+                    <div class="plataforma-icon">🛡️</div>
+                    <h3>Seguridad</h3>
+                    <p>Profesionalización policial, no militarización. Seguridad con respeto a los derechos humanos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campaña MORIEL -->
+    <section class="moriel-campaign" id="moriel">
+        <div class="moriel-content">
+            <div class="moriel-logo">
+                <h2>MORIEL</h2>
+                <div class="underline"></div>
+                <p>PPB</p>
+            </div>
+
+            <div class="moriel-discurso">
+                <h3>El discurso MORIEL</h3>
+                <p>Somos las <strong>Mujeres</strong> que construyen el futuro de México.</p>
+                <p>Creemos en las <strong>Oportunidades</strong> para todas y todos, sin distinción.</p>
+                <p>Impulsamos una <strong>Reforma</strong> profunda que transforme nuestras instituciones.</p>
+                <p>Defendemos la <strong>Igualdad</strong> de derechos como pilar fundamental.</p>
+                <p>Apostamos por la <strong>Educación</strong> como motor del progreso.</p>
+                <p>Protegemos la <strong>Libertad</strong> individual y económica.</p>
+                <p class="conclusion">Somos <strong>MORIEL</strong>. Somos Progreso y Bienestar.</p>
+            </div>
+
+            <div class="moriel-cta">
+                <h3>VOTA MORIEL</h3>
+                <p>Primero nuestra gente, primero tú</p>
+                <a href="#contacto" class="btn btn-primary">Únete a la Campaña</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-logos">
+                <div class="footer-logo-circle azul"></div>
+                <div class="footer-logo-circle amarillo"></div>
+                <div class="footer-logo-circle rosa"></div>
+            </div>
+            <h3>PARTIDO PROGRESO Y BIENESTAR</h3>
+            <p>Construyendo el México del futuro</p>
+            <p>contacto@ppb.mx | @ppbmexico</p>
+            <div class="footer-info">
+                <p>© 2026 Partido Progreso y Bienestar. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
