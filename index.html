@@ -51,24 +51,17 @@
             text-decoration: none;
         }
 
-        nav .logo-circle {
-            width: 45px;
-            height: 45px;
-            background: #043168;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 26px;
-            font-weight: 700;
-            color: #fce07d;
+        nav .logo-img {
+            height: 42px;
+            width: auto;
+            display: block;
         }
 
         nav .logo-text {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
             color: #043168;
-            letter-spacing: 0.5px;
+            letter-spacing: 1.5px;
         }
 
         nav ul {
@@ -375,33 +368,72 @@
             background: #F5F5F5;
         }
 
+        .organigrama .org-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            color: #2c2c2a;
+            font-size: 16px;
+        }
+
         .org-chart {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2rem;
-            margin-bottom: 3rem;
+            gap: 2.5rem;
+            margin-bottom: 2rem;
         }
 
         .org-level {
             display: flex;
-            gap: 1.5rem;
+            gap: 1.75rem;
             flex-wrap: wrap;
             justify-content: center;
+            width: 100%;
         }
 
         .org-card {
             background: white;
-            border-radius: 12px;
-            padding: 1.5rem 2rem;
+            border-radius: 14px;
+            padding: 1.25rem;
             text-align: center;
             box-shadow: 0 4px 16px rgba(4, 49, 104, 0.1);
-            min-width: 280px;
+            min-width: 230px;
+            max-width: 260px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .org-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(4, 49, 104, 0.2);
+        }
+
+        .org-photo {
+            width: 100%;
+            display: block;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .org-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .org-card.presidencial {
-            background: linear-gradient(135deg, #043168 0%, #0a4a8f 100%);
-            box-shadow: 0 8px 30px rgba(4, 49, 104, 0.3);
+            background: linear-gradient(180deg, #043168 0%, #0a4a8f 100%);
+            box-shadow: 0 10px 32px rgba(4, 49, 104, 0.3);
+            min-width: 260px;
+            max-width: 280px;
         }
 
         .org-card.presidencial .org-cargo {
@@ -412,27 +444,45 @@
             color: white;
         }
 
+        .org-card.presidencial .org-link {
+            color: #fce07d;
+        }
+
         .org-card.coordinadora {
             border: 3px solid #b03f6e;
         }
 
         .org-card.secretarias {
-            background: #fce07d;
+            background: linear-gradient(180deg, #fce07d 0%, #f5d95f 100%);
         }
 
         .org-cargo {
             font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
             color: #043168;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
         }
 
         .org-nombre {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 700;
             color: #043168;
+            margin-bottom: 0.75rem;
+            line-height: 1.25;
+        }
+
+        .org-link {
+            font-size: 12px;
+            font-weight: 600;
+            color: #b03f6e;
+            letter-spacing: 0.5px;
+            margin-top: auto;
+        }
+
+        .org-card:hover .org-link {
+            text-decoration: underline;
         }
 
         /* Compás político */
@@ -706,32 +756,16 @@
             text-align: center;
         }
 
-        .footer-logos {
+        .footer-logo {
             display: flex;
-            align-items: center;
             justify-content: center;
-            gap: 2rem;
             margin-bottom: 2rem;
-            flex-wrap: wrap;
         }
 
-        .footer-logo-circle {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 3px solid white;
-        }
-
-        .footer-logo-circle.azul {
-            background: #043168;
-        }
-
-        .footer-logo-circle.amarillo {
-            background: #fce07d;
-        }
-
-        .footer-logo-circle.rosa {
-            background: #b03f6e;
+        .footer-logo img {
+            width: 180px;
+            height: auto;
+            display: block;
         }
 
         footer h3 {
@@ -760,6 +794,12 @@
         }
 
         /* Responsive */
+        @media (max-width: 900px) {
+            nav .logo-text {
+                display: none;
+            }
+        }
+
         @media (max-width: 768px) {
             nav ul {
                 display: none;
@@ -821,6 +861,14 @@
 
             .org-level {
                 flex-direction: column;
+                align-items: center;
+            }
+
+            .org-card,
+            .org-card.presidencial {
+                min-width: 240px;
+                max-width: 300px;
+                width: 100%;
             }
         }
     </style>
@@ -830,8 +878,8 @@
     <nav>
         <div class="container">
             <a href="#inicio" class="logo">
-                <div class="logo-circle">P</div>
-                <span class="logo-text">PPB</span>
+                <img src="./assets/logo.png" alt="PPB" class="logo-img">
+                <span class="logo-text">PARTIDO PROGRESO Y BIENESTAR</span>
             </a>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
@@ -899,37 +947,58 @@
     <section class="organigrama">
         <div class="container">
             <h2>Estructura del Partido</h2>
+            <p class="org-intro">El equipo que está construyendo el PPB. Da clic en cada perfil para conocer su trayectoria.</p>
             <div class="org-chart">
                 <!-- Nivel 1: Candidata Presidencial -->
                 <div class="org-level">
-                    <div class="org-card presidencial">
+                    <a href="./moriel.html" class="org-card presidencial">
+                        <div class="org-photo">
+                            <img src="./assets/moriel.png" alt="Ana Sofía Moriel">
+                        </div>
                         <p class="org-cargo">Candidata Presidencial</p>
                         <p class="org-nombre">Ana Sofía Moriel</p>
-                    </div>
+                        <span class="org-link">Ver perfil →</span>
+                    </a>
                 </div>
 
                 <!-- Nivel 2: Coordinadora General -->
                 <div class="org-level">
-                    <div class="org-card coordinadora">
+                    <a href="./sara.html" class="org-card coordinadora">
+                        <div class="org-photo">
+                            <img src="./assets/sara.png" alt="Sara Alvidrez">
+                        </div>
                         <p class="org-cargo">Coordinadora General de Campaña</p>
                         <p class="org-nombre">Sara Alvidrez</p>
-                    </div>
+                        <span class="org-link">Ver perfil →</span>
+                    </a>
                 </div>
 
                 <!-- Nivel 3: Secretarías -->
                 <div class="org-level">
-                    <div class="org-card secretarias">
+                    <a href="./alexa.html" class="org-card secretarias">
+                        <div class="org-photo">
+                            <img src="./assets/alexa.png" alt="Alexa Quintero">
+                        </div>
                         <p class="org-cargo">Secretaria de Comunicación Estratégica</p>
                         <p class="org-nombre">Alexa Quintero</p>
-                    </div>
-                    <div class="org-card secretarias">
+                        <span class="org-link">Ver perfil →</span>
+                    </a>
+                    <a href="./sofia.html" class="org-card secretarias">
+                        <div class="org-photo">
+                            <img src="./assets/sofia.png" alt="Sofía Torres">
+                        </div>
                         <p class="org-cargo">Directora de Políticas Públicas</p>
                         <p class="org-nombre">Sofía Torres</p>
-                    </div>
-                    <div class="org-card secretarias">
+                        <span class="org-link">Ver perfil →</span>
+                    </a>
+                    <a href="./jessica.html" class="org-card secretarias">
+                        <div class="org-photo">
+                            <img src="./assets/jessica.png" alt="Jessica Talavera">
+                        </div>
                         <p class="org-cargo">Secretaria de Finanzas y Logística</p>
                         <p class="org-nombre">Jessica Talavera</p>
-                    </div>
+                        <span class="org-link">Ver perfil →</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1040,14 +1109,12 @@
     <!-- Footer -->
     <footer id="contacto">
         <div class="container">
-            <div class="footer-logos">
-                <div class="footer-logo-circle azul"></div>
-                <div class="footer-logo-circle amarillo"></div>
-                <div class="footer-logo-circle rosa"></div>
+            <div class="footer-logo">
+                <img src="./assets/logo.png" alt="Partido Progreso y Bienestar">
             </div>
             <h3>PARTIDO PROGRESO Y BIENESTAR</h3>
             <p>Construyendo el México del futuro</p>
-            <p>contacto@ppb.mx | @ppbmexico</p>
+            <p>@progresoybienestar</p>
             <div class="footer-info">
                 <p>© 2026 Partido Progreso y Bienestar. Todos los derechos reservados.</p>
             </div>
