@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofía Torres | Directora de Políticas Públicas - PPB</title>
+    <meta name="description" content="Sofía Torres, Directora de Políticas Públicas del PPB. Investigadora y abogada especializada en reformas económicas, educativas y de derechos humanos.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: #2c2c2a;
+            background: #F5F5F5;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(4, 49, 104, 0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        nav .logo-img {
+            height: 42px;
+            width: auto;
+            display: block;
+        }
+
+        nav .logo-text {
+            font-size: 15px;
+            font-weight: 700;
+            color: #043168;
+            letter-spacing: 1.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #043168;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: #b03f6e; }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #fce07d;
+            color: #043168;
+        }
+
+        .btn-primary:hover {
+            background: #f5d95f;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #043168;
+            border: 2px solid #043168;
+        }
+
+        .btn-outline:hover {
+            background: #043168;
+            color: white;
+        }
+
+        /* Profile Hero */
+        .profile-hero {
+            position: relative;
+            background: linear-gradient(135deg, #043168 0%, #1a5ba5 60%, #043168 100%);
+            padding: 9rem 2rem 5rem;
+            overflow: hidden;
+        }
+
+        .profile-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -25%;
+            width: 150%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(252, 224, 125, 0.13) 0%, transparent 70%);
+            filter: blur(100px);
+            pointer-events: none;
+        }
+
+        .profile-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            right: -30%;
+            width: 140%;
+            height: 180%;
+            background: radial-gradient(circle, rgba(176, 63, 110, 0.12) 0%, transparent 60%);
+            filter: blur(90px);
+            pointer-events: none;
+        }
+
+        .profile-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 360px 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .profile-polaroid {
+            width: 100%;
+            max-width: 360px;
+            filter: drop-shadow(0 25px 50px rgba(0,0,0,0.35));
+        }
+
+        .profile-polaroid img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .profile-back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(252, 224, 125, 0.9);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .profile-back-link:hover { color: #fce07d; }
+
+        .profile-cargo {
+            display: inline-block;
+            background: rgba(252, 224, 125, 0.15);
+            border: 1.5px solid rgba(252, 224, 125, 0.4);
+            border-radius: 50px;
+            padding: 0.4rem 1.25rem;
+            margin-bottom: 1.5rem;
+            color: #fce07d;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+        }
+
+        .profile-nombre {
+            font-size: 72px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: -2px;
+            line-height: 1.05;
+            margin-bottom: 1rem;
+        }
+
+        .profile-tagline {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        /* Bio section */
+        .profile-section {
+            padding: 5rem 2rem;
+        }
+
+        .profile-section .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .profile-section.bio {
+            background: white;
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: #b03f6e;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #043168;
+            margin-bottom: 2rem;
+            letter-spacing: -1px;
+        }
+
+        .bio-text {
+            font-size: 18px;
+            line-height: 1.75;
+            color: #2c2c2a;
+        }
+
+        .bio-text p { margin-bottom: 1.25rem; }
+
+        .bio-text p:last-child { margin-bottom: 0; }
+
+        /* Timeline */
+        .profile-section.trayectoria { background: #F5F5F5; }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: linear-gradient(180deg, #b03f6e 0%, #043168 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2.5rem;
+        }
+
+        .timeline-item:last-child { padding-bottom: 0; }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 4px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid #b03f6e;
+            box-shadow: 0 0 0 3px #F5F5F5;
+        }
+
+        .timeline-year {
+            font-size: 13px;
+            font-weight: 700;
+            color: #b03f6e;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.4rem;
+        }
+
+        .timeline-role {
+            font-size: 20px;
+            font-weight: 700;
+            color: #043168;
+            margin-bottom: 0.25rem;
+            line-height: 1.3;
+        }
+
+        .timeline-org {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+
+        .timeline-desc {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #2c2c2a;
+        }
+
+        /* Formacion */
+        .profile-section.formacion { background: white; }
+
+        .edu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .edu-item {
+            padding: 1.5rem 1.75rem;
+            background: #F5F5F5;
+            border-radius: 10px;
+            border-left: 4px solid #043168;
+        }
+
+        .edu-degree {
+            font-size: 17px;
+            font-weight: 700;
+            color: #043168;
+            margin-bottom: 0.25rem;
+        }
+
+        .edu-inst {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Vision */
+        .profile-section.vision {
+            background: linear-gradient(135deg, #fce07d 0%, #f5d95f 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-section.vision::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -20%;
+            width: 120%;
+            height: 160%;
+            background: radial-gradient(circle, rgba(176, 63, 110, 0.1) 0%, transparent 55%);
+            filter: blur(90px);
+            pointer-events: none;
+        }
+
+        .vision-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .vision-quote {
+            font-size: 32px;
+            font-weight: 500;
+            color: #043168;
+            font-style: italic;
+            line-height: 1.4;
+            margin: 0 auto 2rem;
+            max-width: 800px;
+            letter-spacing: -0.5px;
+        }
+
+        .vision-quote::before {
+            content: '"';
+            font-size: 80px;
+            color: #b03f6e;
+            display: block;
+            line-height: 0.5;
+            margin-bottom: 1rem;
+            font-family: Georgia, serif;
+        }
+
+        .vision-attribution {
+            font-size: 14px;
+            color: #043168;
+            letter-spacing: 2px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Final CTA */
+        .profile-section.final-cta {
+            background: #043168;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .final-cta h3 {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+
+        .final-cta-buttons {
+            display: inline-flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Footer */
+        footer {
+            background: #032851;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo img {
+            width: 180px;
+            height: auto;
+            display: block;
+        }
+
+        footer h3 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+            letter-spacing: -0.5px;
+        }
+
+        footer p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-info p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            nav .logo-text { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+
+            .profile-hero {
+                padding: 7rem 1.5rem 3rem;
+            }
+
+            .profile-hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .profile-polaroid {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+
+            .profile-back-link { justify-content: center; display: inline-flex; }
+
+            .profile-nombre {
+                font-size: 48px;
+                letter-spacing: -1px;
+            }
+
+            .profile-tagline {
+                font-size: 17px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .bio-text { font-size: 16px; }
+
+            .vision-quote {
+                font-size: 22px;
+            }
+
+            .final-cta h3 {
+                font-size: 24px;
+            }
+
+            .final-cta-buttons { flex-direction: column; width: 100%; }
+            .final-cta-buttons .btn { width: 100%; }
+        }
+</style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="./index.html" class="logo">
+                <img src="./assets/logo.png" alt="PPB" class="logo-img">
+                <span class="logo-text">PARTIDO PROGRESO Y BIENESTAR</span>
+            </a>
+            <ul>
+                <li><a href="./index.html#inicio">Inicio</a></li>
+                <li><a href="./index.html#quienes-somos">Quiénes Somos</a></li>
+                <li><a href="./index.html#plataforma">Plataforma</a></li>
+                <li><a href="./index.html#moriel">MORIEL</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Profile Hero -->
+    <section class="profile-hero">
+        <div class="profile-hero-content">
+            <div class="profile-polaroid">
+                <img src="./assets/sofia.png" alt="Sofía Torres">
+            </div>
+            <div>
+                <a href="./index.html#quienes-somos" class="profile-back-link">← Equipo PPB</a>
+                <span class="profile-cargo">Directora de Políticas Públicas</span>
+                <h1 class="profile-nombre">Sofía Torres</h1>
+                <p class="profile-tagline">Abogada, economista y PhD por Chicago. Sofía Torres es la arquitecta técnica de cada propuesta del PPB: rigor, evidencia y ambición.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Biografía -->
+    <section class="profile-section bio">
+        <div class="container">
+            <p class="section-label">Biografía</p>
+            <h2 class="section-title">Política con evidencia, propuestas con peso</h2>
+            <div class="bio-text">
+                <p>Sofía Torres es abogada por el ITAM con doctorado en Economía por la Universidad de Chicago. Durante la última década ha oscilado entre la academia, el servicio público y la consultoría, siempre con una obsesión: diseñar políticas que funcionen.</p>
+                <p>Como investigadora titular del CIDE, publicó trabajos sobre sistema educativo, reforma fiscal y desigualdad regional que se convirtieron en referencia obligada en el debate público. Previamente fue asesora en la Secretaría de Hacienda, donde participó en el diseño de instrumentos de política económica.</p>
+                <p>En el PPB, Sofía dirige la elaboración de la plataforma programática del partido. Cada propuesta de MORIEL pasa por su escritorio antes de hacerse pública: revisa la evidencia, los costos, las implicaciones legales y la factibilidad política. Su trabajo es que las buenas intenciones se vuelvan buenas leyes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trayectoria -->
+    <section class="profile-section trayectoria">
+        <div class="container">
+            <p class="section-label">Trayectoria</p>
+            <h2 class="section-title">Experiencia profesional</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2022 — 2025</div>
+                    <div class="timeline-role">Investigadora Titular</div>
+                    <div class="timeline-org">CIDE — Centro de Investigación y Docencia Económicas</div>
+                    <div class="timeline-desc">Investigadora de tiempo completo en el área de Políticas Públicas. Autora de 14 artículos académicos y coautora de dos libros sobre economía mexicana y reforma educativa.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2019 — 2022</div>
+                    <div class="timeline-role">Asesora en Políticas Públicas</div>
+                    <div class="timeline-org">Secretaría de Hacienda y Crédito Público</div>
+                    <div class="timeline-desc">Asesoría técnica en el diseño de instrumentos fiscales y programas de gasto social. Participó en el proceso de presupuestación federal de tres ejercicios consecutivos.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2017 — 2019</div>
+                    <div class="timeline-role">Consultora Independiente</div>
+                    <div class="timeline-org">Proyectos con BID, CEPAL y Banco Mundial</div>
+                    <div class="timeline-desc">Consultoría sobre reformas económicas y de derechos humanos para organismos internacionales. Trabajos en México, Argentina y Ecuador.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2014 — 2017</div>
+                    <div class="timeline-role">Investigadora Asociada</div>
+                    <div class="timeline-org">Mexicanos Contra la Corrupción y la Impunidad</div>
+                    <div class="timeline-desc">Investigación sobre opacidad, corrupción y calidad institucional. Coautora de tres reportes emblemáticos sobre licitaciones públicas en México.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formación -->
+    <section class="profile-section formacion">
+        <div class="container">
+            <p class="section-label">Formación</p>
+            <h2 class="section-title">Preparación académica</h2>
+            <div class="edu-list">
+                <div class="edu-item">
+                    <div class="edu-degree">Doctorado en Economía (PhD)</div>
+                    <div class="edu-inst">University of Chicago · 2014 — 2019</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-degree">Maestría en Políticas Públicas</div>
+                    <div class="edu-inst">Instituto Tecnológico Autónomo de México (ITAM) · 2010 — 2012</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-degree">Licenciatura en Derecho</div>
+                    <div class="edu-inst">Instituto Tecnológico Autónomo de México (ITAM) · 2006 — 2010</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visión -->
+    <section class="profile-section vision">
+        <div class="container">
+            <div class="vision-content">
+                <p class="section-label" style="color: #b03f6e;">Visión</p>
+                <p class="vision-quote">Una política pública sin evidencia es una apuesta. Y México no tiene tiempo para apostar. Cada propuesta del PPB está diseñada para resolver un problema real, medido, con recursos definidos y con un plan de evaluación. Eso es lo que la ciudadanía merece.</p>
+                <p class="vision-attribution">— Sofía Torres</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="profile-section final-cta">
+        <h3>Conoce al resto del equipo</h3>
+        <p>El PPB es un proyecto colectivo. Descubre quiénes más están construyendo este movimiento.</p>
+        <div class="final-cta-buttons">
+            <a href="./index.html#quienes-somos" class="btn btn-primary">Ver todo el equipo</a>
+            <a href="./index.html#moriel" class="btn btn-secondary">Conoce a MORIEL</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container" style="max-width: 1100px; margin: 0 auto;">
+            <div class="footer-logo">
+                <img src="./assets/logo.png" alt="Partido Progreso y Bienestar">
+            </div>
+            <h3>PARTIDO PROGRESO Y BIENESTAR</h3>
+            <p>Construyendo el México del futuro</p>
+            <p>contacto@ppb.mx | @ppbmexico</p>
+            <div class="footer-info">
+                <p>© 2026 Partido Progreso y Bienestar. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
